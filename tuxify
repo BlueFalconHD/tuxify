@@ -1,0 +1,75 @@
+#!/bin/python3
+
+
+# ---- Imports ---- #
+
+import colorama
+import sys
+
+# ---- Argument Parsing ---- #
+
+args = sys.argv[1:]
+
+if len(args) == 0:
+    print("Usage: tuxify.py <text> [<-c: color> <--color: color>]")
+
+color = False
+
+if '-c' in args or '--color' in args:
+    colorama.init()
+    color = True
+    
+    # Remove the argument from the argument list
+    try:
+        args.remove('-c')
+    except:
+        args.remove('--color')
+
+input = args[0]
+
+# ---- Artwork ---- #
+
+tux = """
+         _nnnn_                      
+        dGGGGMMb     ,\"""" + '\"'*len(input) + """\".
+       @p~qp~~qMb    | """ + input + """ |
+       M|@||@) M|   _;.""" + "."*len(input) + """.'
+       @,----.JM| -'
+      JS^\__/  qKL
+     dZP        qKRb
+    dZP          qKKb
+   fZP            SMMb
+   HZM            MMMM
+   FqM            MMMM
+ __| ".        |\dS"qML
+ |    `.       | `' \Zq
+_)      \.___.,|     .'
+\____   )MMMMMM|   .'
+     `-'       `--' 
+"""
+
+tuxcolored = """
+        """ + colorama.Fore.BLACK + """ _nnnn_                      
+        dGGGGMMb""" + colorama.Fore.RESET + """     ,\"""" + '\"'*len(input) + """\".
+       """ + colorama.Fore.BLACK + """@p~qp~~qMb""" + colorama.Fore.RESET + """    | """ + colorama.Fore.YELLOW + input + colorama.Fore.RESET + """ |
+       """ + colorama.Fore.BLACK + """M|""" + colorama.Fore.WHITE + """@""" + colorama.Fore.BLACK + """||""" + colorama.Fore.WHITE + """@""" + colorama.Fore.BLACK + """) M|""" + colorama.Fore.RESET + """   _;.""" + "."*len(input) + """.'
+       """ + colorama.Fore.BLACK + """@,----.JM|""" + colorama.Fore.RESET + """ -'
+      """ + colorama.Fore.BLACK + """JS^""" + colorama.Fore.YELLOW + """\__/""" + colorama.Back.WHITE + colorama.Fore.BLACK + """   """ + colorama.Back.RESET + """qKL
+     """ + colorama.Fore.BLACK + """dZP""" + colorama.Back.WHITE + colorama.Fore.BLACK + """        """ + colorama.Back.RESET + """qKRb
+    dZP""" + colorama.Back.WHITE + colorama.Fore.BLACK + """          """ + colorama.Back.RESET + """qKKb
+   fZP""" + colorama.Back.WHITE + colorama.Fore.BLACK + """            """ + colorama.Back.RESET + """SMMb
+   HZM""" + colorama.Back.WHITE + colorama.Fore.BLACK + """            """ + colorama.Back.RESET + """MMMM
+   FqM""" + colorama.Back.WHITE + colorama.Fore.BLACK + """            """ + colorama.Back.RESET + """MMMM
+""" + colorama.Back.RESET + colorama.Fore.YELLOW + """ __| ".""" + colorama.Back.WHITE + colorama.Fore.BLACK + """        """ + colorama.Back.RESET + colorama.Fore.YELLOW + """|\dS"q""" + colorama.Fore.BLACK + """ML
+""" + colorama.Back.RESET + colorama.Fore.YELLOW + """ |    `.""" + colorama.Back.WHITE + colorama.Fore.BLACK + """       """ + colorama.Back.RESET + colorama.Fore.YELLOW + """| `' \Zq
+""" + colorama.Back.RESET + colorama.Fore.YELLOW + """_)      \\""" + colorama.Fore.CYAN + colorama.Back.WHITE + """.___.,""" + colorama.Back.RESET + colorama.Fore.YELLOW + """|     .'
+""" + colorama.Back.RESET + colorama.Fore.YELLOW + """\____   )""" + colorama.Fore.BLACK + """MMMMMM""" + colorama.Fore.YELLOW + """|   .'
+""" + colorama.Back.RESET + colorama.Fore.YELLOW + """     `-'       `--' 
+"""
+
+# ---- Main ---- #
+
+if color:
+    print(tuxcolored)
+else:
+    print(tux)
