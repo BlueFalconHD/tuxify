@@ -2,7 +2,7 @@
 
 <!-- Top section -->
 <p align="center">
-  <img src="./assets/logo-dark.png" height="175px">
+  <img src="./assets/logo.png" height="175px">
   <br>
   <h1 align="center" >Tuxify</h1>
   <h3 align="center" >Cowsay, but Tux</h3>
