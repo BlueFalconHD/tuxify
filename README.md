@@ -2,7 +2,7 @@
 
 <!-- Top section -->
 <p align="center">
-  <img src="./assets/logo.png" height="175px">
+  <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcritterfacts.com%2Fwp-content%2Fuploads%2F2019%2F03%2Fs_707759077.jpg&f=1&nofb=1" height="175px">
   <br>
   <h1 align="center" >Tuxify</h1>
   <h3 align="center" >Cowsay, but Tux</h3>
